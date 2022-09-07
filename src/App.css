@@ -7,24 +7,23 @@
 * {
   box-sizing: border-box;
   /* border: solid black 1px;*/
-  background-color: #1a4761;
+  background-color: #8491f1;
 }
 
 #icon{
   display: flex;
   width: 18.5em;
   align-items: center;
-  /* background: linear-gradient(
-    #e8bfb2 ,
-    #29beb1 50%
-    ); */
+  background-color: #465aea;
 }
 #big-o{
   font-weight: 100;
   font-family: Segoe UI;
+  background-color: #465aea;
 }
 #morre:not(#big-o){
   font-size: 350%;
+  background-color: #465aea;
 }
 #yourself{
   font-family: Helvetica;
@@ -34,4 +33,5 @@
   font-size: 70%;
   width: 9em;
   height: 3em;
+  background-color: #465aea;
 }

@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 function useFetchData() {
   const [url, setUrl] = useState('')
   function fetchData(url) {
-    async () => {
+    return async () => {
       try{
         const response = await fetch(url);
         if(response.ok){
@@ -16,10 +16,6 @@ function useFetchData() {
       }
     }
   }
-
-  useEffect(()=>{
-    fetchData(url)
-  },[])
   return [url, setUrl, fetchData]
 }
 

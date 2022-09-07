@@ -8,7 +8,10 @@ function LandingPage() {
       </div>
       <h1 id="yourself">BE YOURSELF</h1>
       <p>
-        Located in the heart of Nairobi. Morre institute aims at maintaing the tradition of providing individuals 
+        Located in the heart of Nairobi. Morre institute aims at maintaing the tradition of providing individuals with the tools, access and opportunities needed to become leaders. We offer students a supportive, career-focused environment designed to help you achieve your goals and eventually success.
+      </p>
+      <p>
+        Signup here <a href="/signup">➔</a>
       </p>
     </div>
   )
