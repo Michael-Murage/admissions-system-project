@@ -4,7 +4,7 @@ function Course(props) {
   // console.log(props);
   return (
     <section>
-      <div className="container">
+      <div className="container course">
           <div className="col-sm-12 col-md-6 col-lg-4 mb-4">
             <div className="card text-white card-has-bg" style={{backgroundImage: "url(https://source.unsplash.com/600x900/?tech,street)"}}>
                 <div className="card-img-overlay d-flex flex-column">
