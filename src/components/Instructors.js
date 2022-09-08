@@ -2,17 +2,19 @@ import useFetchData from "../hooks/fetchData"
 import Instructor from "./Instructor"
 
 function Instructors() {
-  const [data, loading, error] = useFetchData("http://localhost:9292/instructors")
-  console.log({data, loading, error});
+  const [instructors, instructLoading, instructError] = useFetchData("http://localhost:9292/instructors")
+  // console.log({instructors, instructLoading, instructError});
   // fetch("http://localhost:9292/instructors")
   // .then(resp.json())
-  // .then(data => console.log(data))
+  // .then(instructors => console.log(instructors))
   
   return (
     <div>
-      {data?.map(elem =>{
-        console.log(elem);
-        return <Instructor />
+      {instructors?.map(elem =>{
+        return <Instructor 
+         name={elem.name} 
+         employee_id={elem.employee_id}
+        />
       })}
     </div>
   )
