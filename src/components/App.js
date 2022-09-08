@@ -12,9 +12,17 @@ import { useEffect } from 'react';
 
 function App() {
   const [url, setUrl, fetchData] = useFetchData()
-  const rand = fetchData("http://localhost:9292/rand")
-
+  let rand;
+  try{
+    // setUrl("http://localhost:9292/rand")
+    rand = fetchData("http://localhost:9292/rand") 
+  }
+  catch(err){
+    console.log(err);
+  }
+  const rand1 = 1
   console.log(rand?.random);
+  
   
   return (
     <>
@@ -23,14 +31,15 @@ function App() {
           <Route path='/signup' element={<SignupForm />}/>
           <Route path='/login' element={<LoginForm />}/>
           <Route path='/instructors' element={<Instructors/>}/>
-          {/* <Route path='/courses' element={<Courses />} /> */}
-          {/* <Route path='/students' element={<Students />}/> */}
-          <Route path={"/students/" + `${rand?.random}edit=true`} element={<StudentsEdit/>}/>
+          <Route path='/courses' element={<Courses />} />
+          <Route path='/students' element={<Students />}/>
+          <Route path={"/students/" + `${rand?.random || rand1}edit=true`} element={<StudentsEdit/>}/>
           <Route path='/' element={<LandingPage />}/>
         </Routes>
       </BrowserRouter>
     </>
   )
+  debugger
 }
 
 export default App;

@@ -7,9 +7,11 @@
 * {
   box-sizing: border-box;
   /* border: solid black 1px;*/
-  background-color: #8491f1;
 }
-
+body:not(.gradient-custom){
+  /* background-color: #8491f1; */
+  background: linear-gradient(to right, rgb(162, 105, 222), rgba(37, 117, 252, 1))
+}
 #icon{
   display: flex;
   width: 18.5em;
@@ -34,4 +36,45 @@
   width: 9em;
   height: 3em;
   background-color: #465aea;
+}
+
+
+.App {
+  background-color: white;
+}
+
+.Auth-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.Auth-form {
+  width: 30em;
+  box-shadow: rgb(0 0 0 / 16%) 1em 1em 8em;
+  padding-top: 5em;
+  padding-bottom: 5em;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.Auth-form-content {
+  padding-left: 12%;
+  padding-right: 12%;
+}
+
+.Auth-form-title {
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 3em;
+  color: rgb(34, 34, 34);
+  font-weight: 800;
+}
+
+label {
+  font-size: 1em;
+  font-weight: 600;
+  color: rgb(34, 34, 34);
 }
