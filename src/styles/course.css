@@ -3,7 +3,7 @@
   transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
   overflow:hidden;
   border-radius:20px;
-  min-height:450px;
+  min-height: 250px;
   box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
 }
 .card-has-bg{
@@ -55,4 +55,11 @@
   transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
   background: rgb(35,79,109);
   background: linear-gradient(0deg, rgba(35,79,109,0.3785889355742297) 0%, rgba(69,95,113,1) 100%);
+}
+.container{
+  display: flex;
+  /* flex-direction: row-reverse; */
+  /* background-color: black; */
+  text-align: center;
+  justify-content: center;
 }
