@@ -8,38 +8,35 @@ import useFetchData from '../hooks/fetchData';
 import StudentsEdit from './StudentsEdit'
 import Students from './Students'
 import Courses from './Courses'
-import { useEffect } from 'react';
+import NavBar from './NavBar';
+import { useState } from 'react';
 
 function App() {
-  const [url, setUrl, fetchData] = useFetchData()
-  let rand;
-  try{
-    // setUrl("http://localhost:9292/rand")
-    rand = fetchData("http://localhost:9292/rand") 
-  }
-  catch(err){
-    console.log(err);
-  }
-  const rand1 = 1
-  console.log(rand?.random);
-  
+  const [data, error, loading] = useFetchData("http://localhost:9292/rand")
+  const [cred, setCred] = useState({
+    username: '',
+    pass: ''
+  })
+  // console.log(rand);
+
+  console.log({data, error, loading});
   
   return (
     <>
       <BrowserRouter>
+        <NavBar />
         <Routes>
           <Route path='/signup' element={<SignupForm />}/>
-          <Route path='/login' element={<LoginForm />}/>
+          <Route path='/login' element={<LoginForm cred={cred} setCred={setCred}/>}/>
           <Route path='/instructors' element={<Instructors/>}/>
           <Route path='/courses' element={<Courses />} />
           <Route path='/students' element={<Students />}/>
-          <Route path={"/students/" + `${rand?.random || rand1}edit=true`} element={<StudentsEdit/>}/>
+          <Route path={"/students/" + `${data?.random || 1}edit=true`} element={<StudentsEdit/>}/>
           <Route path='/' element={<LandingPage />}/>
         </Routes>
       </BrowserRouter>
     </>
   )
-  debugger
 }
 
 export default App;

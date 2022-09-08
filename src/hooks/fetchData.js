@@ -1,23 +1,35 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
-function useFetchData() {
-  const [url, setUrl] = useState('')
+function useFetchData(url) {
+  const [data, setData] = useState()
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState()
+
 
   const fetchData = async () => {
+    setLoading(true)
     try{
       const response = await fetch(url);
       if(response.ok){
         const jsonResp = await response.json();
-        // console.log(jsonResp);
-        return jsonResp
+        setData(jsonResp)
+      }else{
+        setError(new Error("Sorry, response has failed"))
       }
     }
     catch(error){
-      return error;
-    }    
+      setError(error);
+    }
+    finally{
+      setLoading(false)
+    }
   }
+  
+  useEffect(()=>{
+    fetchData()
+  }, [url])
 
-  return [url, setUrl, fetchData]
+  return [data, error, loading]
 }
 
 export default useFetchData
