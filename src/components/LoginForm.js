@@ -11,7 +11,7 @@ function LoginForm({ cred, setCred }) {
     })
   }
 
-  const handleSubmit =(e)=>{
+  const handleSubmit =(e, <Comp1/>, <Comp2/>)=>{
     e.preventDefault()
     fetch("http://localhost:9292/userdata", {
       method: "POST",
@@ -28,11 +28,13 @@ function LoginForm({ cred, setCred }) {
       alert("Welcome", data.username)
       if (data.password === 240322 && data.username === "Michael" || data.password === 230721 && data.username === "admin" ) {
         console.log("correct");
-        return (<StudentsEdit />)
+	  return <Comp1/>
+//        return (<StudentsEdit />)
         }
       else{
         console.log("incorrect");
-        return (<Students />)
+	return <Comp2/>
+       // return (<Students />)
       }
     })
     setCred({
@@ -42,7 +44,7 @@ function LoginForm({ cred, setCred }) {
   }
 
   return (
-    <form className="vh-100 gradient-custom" onSubmit={handleSubmit}>
+    <form className="vh-100 gradient-custom" onSubmit={()=>handleSubmit(e, <StudentsEdit/>, <Students/>)}>
       <div className="container py-5 h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-12 col-md-8 col-lg-6 col-xl-5">
