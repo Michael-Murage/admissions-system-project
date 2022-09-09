@@ -1,4 +1,3 @@
-import React from 'react'
 
 function Student(props) {
   // console.log(props);
@@ -20,10 +19,3 @@ function Student(props) {
 }
 
 export default Student
-
-{/* <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr> */}

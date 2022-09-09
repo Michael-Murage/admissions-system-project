@@ -1,15 +1,48 @@
+import Students from "./Students";
+import StudentsEdit from "./StudentsEdit";
 
 function LoginForm({ cred, setCred }) {
   const handleChange =(e)=>{
     let id = e.target.id
     let val = e.target.value
-    console.log(id, val);
     setCred({
-      [id]: val, ...cred
+      ...cred,
+      [id]: val
     })
   }
+
+  const handleSubmit =(e)=>{
+    e.preventDefault()
+    fetch("http://localhost:9292/userdata", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username: cred.username,
+        password: cred.pass
+      })
+    })
+    .then(resp => resp.json())
+    .then((data)=>{
+      alert("Welcome", data.username)
+      if (data.password === 240322 && data.username === "Michael" || data.password === 230721 && data.username === "admin" ) {
+        console.log("correct");
+        return (<StudentsEdit />)
+        }
+      else{
+        console.log("incorrect");
+        return (<Students />)
+      }
+    })
+    setCred({
+      username: '',
+      pass: ''
+    })
+  }
+
   return (
-    <section className="vh-100 gradient-custom">
+    <form className="vh-100 gradient-custom" onSubmit={handleSubmit}>
       <div className="container py-5 h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -22,7 +55,7 @@ function LoginForm({ cred, setCred }) {
                   <p className="text-white-50 mb-5">Please enter your login and password!</p>
 
                   <div className="form-outline form-white mb-4">
-                    <input type="email" id="username" value={cred.username} onChange={handleChange} className="form-control form-control-lg" />
+                    <input type="text" id="username" value={cred.username} onChange={handleChange} className="form-control form-control-lg" />
                     <label className="form-label" htmlFor="username">Email or Username</label>
                   </div>
 
@@ -38,7 +71,7 @@ function LoginForm({ cred, setCred }) {
           </div>
         </div>
       </div>
-    </section>
+    </form>
   )
 }
 

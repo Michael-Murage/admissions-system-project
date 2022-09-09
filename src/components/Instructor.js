@@ -1,9 +1,7 @@
-import React from 'react'
 import '../styles/instructors.css'
 
 function Instructor({ name, employee_id }) {
-  // console.log(props);
-  // debugger
+  
   return (
     <div className="section_our_solution">
       <div className="row">

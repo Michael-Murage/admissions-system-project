@@ -1,4 +1,3 @@
-import React from 'react'
 import useFetchData from '../hooks/fetchData'
 import Student from './Student';
 
