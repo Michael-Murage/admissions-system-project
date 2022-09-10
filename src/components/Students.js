@@ -3,10 +3,10 @@ import Student from './Student';
 
 function Students() {
   const [students, studentLoading, studentError] = useFetchData("http://localhost:9292/students")
-  console.log(students);
+  // console.log(students);
   return (
     <div>
-       <table className="table table-bordered">
+       <table className="table table-bordered whiteboard">
   <thead>
     <tr>
       <th scope="col">#</th>

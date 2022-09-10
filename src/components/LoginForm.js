@@ -1,7 +1,14 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Students from "./Students";
 import StudentsEdit from "./StudentsEdit";
 
-function LoginForm({ cred, setCred }) {
+function LoginForm() {
+  const [cred, setCred] = useState({
+    username: '',
+    pass: ''
+  })
+  const navigate = useNavigate()
   const handleChange =(e)=>{
     let id = e.target.id
     let val = e.target.value
@@ -11,7 +18,7 @@ function LoginForm({ cred, setCred }) {
     })
   }
 
-  const handleSubmit =(e, <Comp1/>, <Comp2/>)=>{
+  const handleSubmit =(e, Comp1, Comp2)=>{
     e.preventDefault()
     fetch("http://localhost:9292/userdata", {
       method: "POST",
@@ -25,16 +32,14 @@ function LoginForm({ cred, setCred }) {
     })
     .then(resp => resp.json())
     .then((data)=>{
-      alert("Welcome", data.username)
-      if (data.password === 240322 && data.username === "Michael" || data.password === 230721 && data.username === "admin" ) {
+      alert("Welcome", cred.username)
+      if ((cred.pass === "240322" && cred.username === "Michael") ) {
         console.log("correct");
-	  return <Comp1/>
-//        return (<StudentsEdit />)
+	      navigate('/studentsedit')
         }
       else{
         console.log("incorrect");
-	return <Comp2/>
-       // return (<Students />)
+	      navigate('/students')
       }
     })
     setCred({
@@ -44,7 +49,7 @@ function LoginForm({ cred, setCred }) {
   }
 
   return (
-    <form className="vh-100 gradient-custom" onSubmit={()=>handleSubmit(e, <StudentsEdit/>, <Students/>)}>
+    <form className="vh-100 gradient-custom" onSubmit={(e)=>handleSubmit(e, <StudentsEdit/>, <Students/>)}>
       <div className="container py-5 h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-12 col-md-8 col-lg-6 col-xl-5">

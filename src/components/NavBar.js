@@ -13,7 +13,7 @@ function NavBar() {
             {/* <Nav.Link href="/signup">Signup</Nav.Link> */}
             <Nav.Link href="/students">Students</Nav.Link>
             <Nav.Link href="/courses">Courses</Nav.Link>
-            {/* <Nav.Link href="/instructors">Instructors</Nav.Link> */}
+            <Nav.Link href="/instructors">Instructors</Nav.Link>
             {/* className="me-auto" */}
           </Nav>
         </Container>

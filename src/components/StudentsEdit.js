@@ -6,10 +6,10 @@ function StudentsEdit() {
   // console.log(students);
   return (
     <div>
-       <table className="table table-bordered">
+       <table className="table table-bordered whiteboard">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <th scope="col">#</th> 
       <th scope="col">name</th>
       <th scope="col">gender</th>
       <th scope="col">id_number</th>

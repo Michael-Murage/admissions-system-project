@@ -2,7 +2,7 @@ import useFetchData from "../hooks/fetchData"
 import Instructor from "./Instructor"
 
 function Instructors() {
-  const [instructors, instructLoading, instructError] = useFetchData("https://admission-manage-backend.herokuapp.com/instructors")
+  const [instructors, instructLoading, instructError] = useFetchData("http://localhost:9292/instructors")
   // console.log({instructors, instructLoading, instructError});
   // fetch("http://localhost:9292/instructors")
   // .then(resp.json())
