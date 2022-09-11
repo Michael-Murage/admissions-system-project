@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 function EditForm() {
   const {id} = useParams()
+  // statuses = ["active", "inactive", "pending"]
   const [data, setData] = useState({
     name: '',
     age: '',
@@ -16,7 +17,7 @@ function EditForm() {
   })
   const navigate = useNavigate()
   useEffect(()=>{
-    fetch(`http://localhost:9292/edit/${id}`)
+    fetch(`https://admission-manage-backend.herokuapp.com/edit/${id}`)
     .then(res => res.json())
     .then(items=> setData(items))
     .catch(err => console.log(err)
@@ -32,7 +33,7 @@ function EditForm() {
 
   const handleSubmit =(e)=>{
     e.preventDefault()
-    fetch(`http://localhost:9292/students/${id}`,{
+    fetch(`https://admission-manage-backend.herokuapp.com/students/${id}`,{
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
@@ -67,7 +68,7 @@ function EditForm() {
   }
 
   const deleteData = (e)=>{
-    fetch(`http://localhost:9292/students/${id}`,{
+    fetch(`https://admission-manage-backend.herokuapp.com/students/${id}`,{
       method: 'DELETE',
       headers: {
         "Content-Type": "application/json"
@@ -116,6 +117,11 @@ function EditForm() {
                     <input type="text" name="status" placeholder={data?.status} value={data.status} onChange={handleChange} className="form-control form-control-lg" />
                     <label className="form-label" htmlFor="status">Status i.e inactive, active or pending</label>
                   </div>
+                  {/* <select>
+                    <option value={data?.status[0]}>active</option>
+                    <option value={data?.status[1]}>inactive</option>
+                    <option value={data?.status[2]}>pending</option>                    
+                  </select> */}
 
                   <div className="form-outline form-white mb-4">
                     <input type="number" name="admission_number" placeholder={data.admission_number} value={data.admission_number} onChange={handleChange} className="form-control form-control-lg" />

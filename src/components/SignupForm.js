@@ -17,7 +17,7 @@ function SignupForm() {
 
   const handleSubmit =(e)=>{
     e.preventDefault()
-    fetch("http://localhost:9292/students",{
+    fetch("https://admission-manage-backend.herokuapp.com/students",{
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -51,7 +51,7 @@ function SignupForm() {
 
                 <div className="mb-md-5 mt-md-4 pb-5">
 
-                  <h2 className="fw-bold mb-2 text-uppercase">Signup</h2>
+                  <h2 className="fw-bold mb-2 text-uppercase">Pre-Admission</h2>
                   <p className="text-white-50 mb-5">Please enter your details accordingly...</p>
                 {/* Form start */}
                   <div className="form-outline form-white mb-4">

@@ -1,14 +1,15 @@
+import { Table } from 'react-bootstrap';
 import useFetchData from '../hooks/fetchData'
 import Student from './Student';
 
 function Students() {
-  const [students, studentLoading, studentError] = useFetchData("http://localhost:9292/students")
+  const [students, studentLoading, studentError] = useFetchData("https://admission-manage-backend.herokuapp.com/students")
   // console.log(students);
   return (
     <div>
-       <table className="table table-bordered whiteboard">
-  <thead>
-    <tr>
+       <Table className="table table-bordered whiteboard">
+  <thead >
+    <tr className='fixed-table'>
       <th scope="col">#</th>
       <th scope="col">name</th>
       <th scope="col">gender</th>
@@ -38,7 +39,7 @@ function Students() {
         />
       })}
   </tbody>
-</table>
+</Table>
     </div>
   )
 }

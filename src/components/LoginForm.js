@@ -20,7 +20,7 @@ function LoginForm() {
 
   const handleSubmit =(e, Comp1, Comp2)=>{
     e.preventDefault()
-    fetch("http://localhost:9292/userdata", {
+    fetch("https://admission-manage-backend.herokuapp.com/userdata", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -71,8 +71,9 @@ function LoginForm() {
                     <label className="form-label" htmlFor="pass">Password</label>
                   </div>
                   <button className="btn btn-outline-light btn-lg px-5" type="submit" >Login</button>   
+                  <br/><br/>
+                  <p>For aspiring students, click <a href="/signup">here</a></p>
                 </div>
-                <p>For aspiring students, click <a href="/signup">here</a></p>
               </div>
             </div>
           </div>

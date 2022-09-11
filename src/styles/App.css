@@ -52,3 +52,14 @@ body{
   background-image: url("../assets/bg-signup.jpg");
   background-repeat: no-repeat;
 } */
+.fixed{
+  position: sticky;
+  width: 100%;
+  top: 0;
+}
+.fixed-table{
+  position: sticky;
+  top: 9.3vh;
+  width: 100vw;
+  background-color: #465aea;
+}
