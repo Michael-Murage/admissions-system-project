@@ -1,7 +1,11 @@
 
 function LandingPage() {
   return (
-    <div className="whiteboard">
+    <div className="whiteboard landing" style={{
+      backgroundImage: 'url(../assets/bg-signup.jpg)',
+      height: "100vh",
+      backgroundRepeat: "no-repeat"
+    }}>
       <div id="icon">
         <h1 id="morre">M<span id="big-o">O</span>RRE</h1>
         <p id="icon-desc">INSTITUTION OF THE ART OF CODING</p>
