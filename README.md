@@ -15,11 +15,14 @@ This is a basic version of a student's manangement system. This means it is an a
 ## What works?
 A user can:
 > View students, instructors, courses tables
+
 > Sign up as a new student
 
 An admin can:
 > Do all the things a user can do
+
 > Edit a student's information
+
 > Delete a student's information
 
 ## What doesn't work?
