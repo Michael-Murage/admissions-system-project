@@ -2,8 +2,11 @@
 
 ## Useful links
 Client side (deployed): https://school-admission-project.herokuapp.com/
+
 Server side (deployed): https://admission-manage-backend.herokuapp.com/
-Sever side (github repo): https://github.com/Michael-Murage/admissions-project-backend
+
+Server side (github repo): https://github.com/Michael-Murage/admissions-project-backend
+
 Relations table: https://drawsql.app/teams/admissions/diagrams/admissions-table
 
 ## Description
