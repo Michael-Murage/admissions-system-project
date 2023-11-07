@@ -12,7 +12,7 @@ import Instructors from './Instructors';
 import EditForm from './EditForm';
 
 function App() {
-  const [data, error, loading] = useFetchData("https://admission-manage-backend.herokuapp.com/rand")
+  const [data, error, loading] = useFetchData("http://localhost:9292/rand")
   
   // console.log(rand);
 

@@ -3,7 +3,7 @@ import useFetchData from '../hooks/fetchData'
 import Course from './Course'
 
 function Courses() {
-  const [courses, courseLoading, courseError] = useFetchData("https://admission-manage-backend.herokuapp.com/courses")
+  const [courses, courseLoading, courseError] = useFetchData("http://localhost:9292/courses")
   
   return (
     <div>

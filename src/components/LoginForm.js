@@ -20,7 +20,7 @@ function LoginForm() {
 
   const handleSubmit =(e, Comp1, Comp2)=>{
     e.preventDefault()
-    fetch("https://admission-manage-backend.herokuapp.com/userdata", {
+    fetch("http://localhost:9292/userdata", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

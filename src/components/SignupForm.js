@@ -17,7 +17,7 @@ function SignupForm() {
 
   const handleSubmit =(e)=>{
     e.preventDefault()
-    fetch("https://admission-manage-backend.herokuapp.com/students",{
+    fetch("http://localhost:9292/students",{
       method: "POST",
       headers: {
         "Content-Type": "application/json"

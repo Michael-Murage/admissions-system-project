@@ -3,7 +3,7 @@ import useFetchData from '../hooks/fetchData'
 import StudentEdit from './StudentEdit';
 
 function StudentsEdit() {
-  const [students, studentLoading, studentError] = useFetchData("https://admission-manage-backend.herokuapp.com/students")
+  const [students, studentLoading, studentError] = useFetchData("http://localhost:9292/students")
   // console.log(students);
   return (
     <div>

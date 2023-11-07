@@ -17,7 +17,7 @@ function EditForm() {
   })
   const navigate = useNavigate()
   useEffect(()=>{
-    fetch(`https://admission-manage-backend.herokuapp.com/edit/${id}`)
+    fetch(`http://localhost:9292/edit/${id}`)
     .then(res => res.json())
     .then(items=> setData(items))
     .catch(err => console.log(err)
@@ -33,7 +33,7 @@ function EditForm() {
 
   const handleSubmit =(e)=>{
     e.preventDefault()
-    fetch(`https://admission-manage-backend.herokuapp.com/students/${id}`,{
+    fetch(`http://localhost:9292/${id}`,{
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
@@ -68,7 +68,7 @@ function EditForm() {
   }
 
   const deleteData = (e)=>{
-    fetch(`https://admission-manage-backend.herokuapp.com/students/${id}`,{
+    fetch(`http://localhost:9292/students/${id}`,{
       method: 'DELETE',
       headers: {
         "Content-Type": "application/json"
