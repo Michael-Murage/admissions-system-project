@@ -1,13 +1,12 @@
 # Admissions Project
 
 ## Useful links
-Client side (deployed): https://school-admission-project.herokuapp.com/
-
-Server side (deployed): https://admission-manage-backend.herokuapp.com/
 
 Server side (github repo): https://github.com/Michael-Murage/admissions-project-backend
 
 Relations table: https://drawsql.app/teams/admissions/diagrams/admissions-table
+
+Project demo (video): https://youtu.be/pFZs5DkSo0w
 
 ## Description
 This is a basic version of a student's manangement system. This means it is an app to do some basic CRUD and storage functionalities mainly for students. The application's frontend is done using React and its server side done using Sinatra (and Ruby).
